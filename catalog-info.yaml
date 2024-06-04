@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: luc8k9m8s-nodejs-gitops
+  description: This is GitOps manifest for luc8k9m8s-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: luc8k9m8s-nodejs
+    janus-idp.io/tekton: luc8k9m8s-nodejs 
+    backstage.io/kubernetes-id: luc8k9m8s-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:luc8k9m8s-nodejs
